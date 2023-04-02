@@ -15,11 +15,11 @@
 
 <hr>
 
-<div class="alert alert-danger">
-    No se encontro el País escrito.
+<div *ngIf="errorMessage" class="alert alert-danger">
+    No se encontró el País escrito.
 </div>
 
-<div class="row">
+<div *ngIf="countries.length > 0" class="row">
     <div class="col">
         <table class="table table-hover">
             <thead>
@@ -28,14 +28,20 @@
                     <th>Bandera</th>
                     <th>Nombre</th>
                     <th>Población</th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>1</td>
-                    <td>1</td>
-                    <td>1</td>
+                <tr *ngFor="let c of countries; let i = index">
+                    <td>{{ i+1 }}</td>
+                    <td>
+                        <img class="small-flag" [src]="c.flags.svg">
+                    </td>
+                    <td>{{ c.name.official }}</td>
+                    <td>{{ c.population | number }}</td>
+                    <td>
+                        <a [routerLink]="['/country/', c.cca2]">Ver...</a>
+                    </td>
                 </tr>
             </tbody>
         </table>
