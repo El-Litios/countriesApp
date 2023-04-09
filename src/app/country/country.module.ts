@@ -8,6 +8,8 @@ import { ByCountryComponent } from './pages/by-country/by-country.component';
 import { ByRegionComponent } from './pages/by-region/by-region.component';
 import { ViewCountryComponent } from './pages/view-country/view-country.component';
 import { RouterModule } from '@angular/router';
+import { CountryTableComponent } from './components/country-table/country-table.component';
+import { SearchInputComponent } from './components/search-input/search-input.component';
 
 
 
@@ -16,7 +18,9 @@ import { RouterModule } from '@angular/router';
     ByCapitalComponent,
     ByCountryComponent,
     ByRegionComponent,
-    ViewCountryComponent
+    ViewCountryComponent,
+    CountryTableComponent,
+    SearchInputComponent
   ],
   imports: [
     CommonModule, FormsModule, HttpClientModule, RouterModule
