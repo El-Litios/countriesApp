@@ -14,15 +14,16 @@ export class ByCountryComponent {
 
   constructor(private serviceCountry: CountryService) {}
 
-  search() {
+  searchByCountry( arg:string) {
     this.errorMessage = false;
+    this.searchText = arg;
     this.serviceCountry.search(this.searchText)
     .subscribe((res) => {
       console.log(res);
       this.countries = res;
     }, (err) => {
       this.errorMessage = true
-      this,this.countries = []
+      this.countries = []
     });
   }
 }
