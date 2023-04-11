@@ -26,4 +26,9 @@ export class ByCountryComponent {
       this.countries = []
     });
   }
+
+  Suggests(term: string){
+    this.errorMessage = false;
+    
+  }
 }

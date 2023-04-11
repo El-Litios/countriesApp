@@ -2,7 +2,10 @@
 <hr>
 <div class="row">
     <div class="col">
-        <app-search-input (onEnter)="searchByCountry($event)" ></app-search-input>
+        <app-search-input 
+        (onEnter)="searchByCountry($event)"
+        (onDebounce)="Suggests( $event )"
+        ></app-search-input>
     </div>
 </div>
 
