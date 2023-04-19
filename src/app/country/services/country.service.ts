@@ -20,4 +20,14 @@ export class CountryService {
     const url = `${this.apiUrl}/capital/${arg}`;
     return this.http.get<Country[]>(url);
   }
+
+  searchRegion(arg: string): Observable<Country[]> {
+    const url = `${this.apiUrl}/region/${arg}`;
+    return this.http.get<Country[]>(url);
+  }
+
+  searchCountryByCode(arg: string): Observable<Country[]> {
+    const url = `${this.apiUrl}/alpha/${arg}`;
+    return this.http.get<Country[]>(url);
+  }
 }

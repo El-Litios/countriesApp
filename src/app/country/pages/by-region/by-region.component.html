@@ -1,1 +1,22 @@
-<p>by-region works!</p>
+<h2>Busqueda Por País</h2>
+<hr>
+<div class="row">
+    <div class="col">
+        <app-search-input 
+        (onEnter)="searchByRegion($event)"
+        (onDebounce)="Suggests( $event )"
+        ></app-search-input>
+    </div>
+</div>
+
+<hr>
+
+<div *ngIf="errorMessage" class="alert alert-danger">
+    No se encontró el País escrito.
+</div>
+
+<div *ngIf="countries.length > 0" class="row">
+    <div class="col">
+        <app-country-table [countries]="countries"></app-country-table>
+    </div>
+</div>
